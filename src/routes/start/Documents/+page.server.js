@@ -3,6 +3,13 @@
 import { writeFileSync, unlinkSync,readFile } from "node:fs";
 import { connectToCluster } from "../../../lib/database/mongo.js";
 import transporter from "../../../lib/email/emailSetup.server";
+import jsftp from 'jsftp'
+const Ftp = new jsftp({
+  host: "rinn.ipage.com",
+  port: 21, // defaults to 21
+  user: "rinn", // defaults to "anonymous"
+  pass: "eYantrik@123" // defaults to "@anonymous"
+});
 let GOOGLE_EMAIL = "support@eyantrik.com"
 export const actions = {
   default: async ({ request, cookies }) => {
@@ -19,10 +26,15 @@ export const actions = {
     const fileDate = "" + currentDay + currentMonth + currentYear + currentHour + currentMinute + currentSecond;
     filename = fileDate + "_" + file.name;
     try {
-      writeFileSync(
-        `build/userfiles/${filename}`,
-        Buffer.from(await file.arrayBuffer())
-      );
+      Ftp.put(Buffer.from(await file.arrayBuffer()), filename, error => {
+        if (!error) {
+          console.log("File transferred successfully!");
+        }
+      });
+      // writeFileSync(
+      //   `build/userfiles/${filename}`,
+      //   Buffer.from(await file.arrayBuffer())
+      // );
       // if (!AZURE_STORAGE_CONNECTION_STRING) {
       //   return { message: " Some is wrong with file connection" }
       // } else {
