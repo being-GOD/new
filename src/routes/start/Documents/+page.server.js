@@ -1,6 +1,6 @@
 // import { AZURE_STORAGE_CONNECTION_STRING, AZURE_STORAGE_CONTAINER_NAME } from "$env/static/private";
 // import { BlobServiceClient } from "@azure/storage-blob";
-import { writeFileSync, unlinkSync } from "node:fs";
+import { writeFileSync, unlinkSync,readFile } from "node:fs";
 import { connectToCluster } from "../../../lib/database/mongo.js";
 import transporter from "../../../lib/email/emailSetup.server";
 let GOOGLE_EMAIL = "support@eyantrik.com"
@@ -20,7 +20,7 @@ export const actions = {
     filename = fileDate + "_" + file.name;
     try {
       writeFileSync(
-        `static/userfiles/${filename}`,
+        `build/userfiles/${filename}`,
         Buffer.from(await file.arrayBuffer())
       );
       // if (!AZURE_STORAGE_CONNECTION_STRING) {
