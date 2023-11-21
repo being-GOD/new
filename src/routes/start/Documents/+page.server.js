@@ -20,7 +20,7 @@ export const actions = {
     filename = fileDate + "_" + file.name;
     try {
       writeFileSync(
-        `build/userfiles/${filename}`,
+        `rinn.in/userfiles/${filename}`,
         Buffer.from(await file.arrayBuffer())
       );
       // if (!AZURE_STORAGE_CONNECTION_STRING) {
