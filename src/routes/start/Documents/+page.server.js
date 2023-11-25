@@ -1,6 +1,7 @@
 // import { AZURE_STORAGE_CONNECTION_STRING, AZURE_STORAGE_CONTAINER_NAME } from "$env/static/private";
 // import { BlobServiceClient } from "@azure/storage-blob";
-import { writeFileSync, unlinkSync,readFile } from "node:fs";
+// import { writeFileSync, unlinkSync,readFile } from "node:fs";
+export const prerender = false;
 import { connectToCluster } from "../../../lib/database/mongo.js";
 import transporter from "../../../lib/email/emailSetup.server";
 import jsftp from 'jsftp'

@@ -2,7 +2,7 @@
 
 <div class=" fixed bottom-10 p-1 rounded-2xl bg-green-700 ml-4 hover:p-2">
     <a
-        href="https://web.whatsapp.com/send?phone=+918587033787&text=Hello, sir!"
+        href="https://api.whatsapp.com/send?phone=+918587033787&text=*Hello+Rinn+Team!*"
         target="_blank"
         class=" inline-flex  "
     >

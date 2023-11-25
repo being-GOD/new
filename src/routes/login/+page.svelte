@@ -1,6 +1,19 @@
 <script>
+    import { browser } from "$app/environment";
+    import { goto } from "$app/navigation";
     import "../../app.css";
+
     import Footer from '../footer.svelte'
+    export let form;
+	if (form?.success) {
+       if(browser){
+        goto("https://google.com")
+       }
+    }
+    else{
+       
+    }
+
 </script>
 
 <section class="mb-20">
@@ -17,7 +30,7 @@
             </p>
         </div>
         <div>
-            <form  action="" method="post">
+            <form method="post">
                 <input
                     type="email"
                     class="block border border-gray-500 m-auto w-3/5 p-4 rounded-lg my-10 "
@@ -36,7 +49,7 @@
                     >Submit</button
                 >
             </form>
-            <a href="#" class="text-blue-400">Forgot your password?</a>
+            <!-- <a href="#" class="text-blue-400">Forgot your password?</a> -->
             <!-- <button class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
                 Save Changes
               </button>  -->
