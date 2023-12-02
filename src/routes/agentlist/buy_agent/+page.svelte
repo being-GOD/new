@@ -5,7 +5,7 @@
     <div class=" grid md:grid-cols-2 p-8">
         <!-----first grid---------------------------------------------->
         <div class=" md:mt-4 mt-0 p-4 md:p-8">
-            <h1 class=" text-center md:font-bold md:text-5xl text-3xl font-semibold  ">Okey,Where are you looking to <span class=" text-green-800">buy</span></h1>
+            <h1 class=" text-center md:font-bold md:text-5xl text-3xl font-semibold  ">Okay,Where are you looking to <span class=" text-green-800">buy</span></h1>
         </div>
         <!----------second grid----------------------------------->
         <div>
